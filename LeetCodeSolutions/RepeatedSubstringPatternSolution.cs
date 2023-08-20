@@ -10,23 +10,28 @@ namespace LeetCodeSolutions
     {
         public bool RepeatedSubstringPattern(string s)
         {
-            bool _Result = false;
-            StringBuilder sb = new StringBuilder();
-            int _Counter = 0;
+            int _Length = s.Length;
 
-            while (!_Result)
+            for (int i = _Length / 2; i >= 1; i--)
             {
-                sb.Append(s[_Counter]);
-
-                if (s.Length % sb.Length == 0)
+                if (_Length % i == 0)
                 {
+                    string _SubStr = s.Substring(0, i);
+                    StringBuilder sb = new StringBuilder();
 
+                    for (int j = 0; j < _Length / i; j++)
+                    {
+                        sb.Append(_SubStr);
+                    }
+
+                    if (sb.ToString() == s)
+                    {
+                        return true;
+                    }
                 }
-
-                _Counter++;
             }
 
-            return _Result;
+            return false;
         }
     }
 }

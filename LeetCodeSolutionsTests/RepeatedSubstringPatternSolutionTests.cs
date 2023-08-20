@@ -12,6 +12,7 @@ namespace LeetCodeSolutionsTests
     {
         [Theory]
         [InlineData("abab")]
+        [InlineData("ababab")]
         [InlineData("abcabcabcabc")]
         public void HasRepeatedSubstringPattern(string _Str)
         {
@@ -25,6 +26,7 @@ namespace LeetCodeSolutionsTests
         [Theory]
         [InlineData("aba")]
         [InlineData("abcabcabcabcd")]
+        [InlineData("a")]
         public void HasNotRepeatedSubstringPattern(string _Str)
         {
             RepeatedSubstringPatternSolution sut = new RepeatedSubstringPatternSolution();
