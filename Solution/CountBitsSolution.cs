@@ -13,12 +13,12 @@ namespace Solution
     {
         public int[] CountBits(int value)
         {
-            
+            return new int[0];
         }
 
         internal int CalculateCountBitsFromNumber(int _Number)
         {
-
+            return 0;
         }
     }
 }
