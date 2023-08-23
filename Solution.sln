@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.33130.400
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solution", "Solution\Solution.csproj", "{82EC0949-5344-4956-8125-A0F84867BFAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Solution", "Solution\Solution.csproj", "{82EC0949-5344-4956-8125-A0F84867BFAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolutionTests", "SolutionTests\SolutionTests.csproj", "{5EEB4EF5-EE4E-4554-890E-F9A36695B7B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolutionTests", "SolutionTests\SolutionTests.csproj", "{5EEB4EF5-EE4E-4554-890E-F9A36695B7B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCodeSolutions", "LeetCodeSolutions\LeetCodeSolutions.csproj", "{4A6C28DE-D9F3-4AA1-87CD-49BFF131D13C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCodeSolutionsTests", "LeetCodeSolutionsTests\LeetCodeSolutionsTests.csproj", "{5EC4B555-BD5E-467B-9146-0CEE878861A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{5EEB4EF5-EE4E-4554-890E-F9A36695B7B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EEB4EF5-EE4E-4554-890E-F9A36695B7B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EEB4EF5-EE4E-4554-890E-F9A36695B7B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A6C28DE-D9F3-4AA1-87CD-49BFF131D13C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A6C28DE-D9F3-4AA1-87CD-49BFF131D13C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A6C28DE-D9F3-4AA1-87CD-49BFF131D13C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A6C28DE-D9F3-4AA1-87CD-49BFF131D13C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EC4B555-BD5E-467B-9146-0CEE878861A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EC4B555-BD5E-467B-9146-0CEE878861A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EC4B555-BD5E-467B-9146-0CEE878861A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EC4B555-BD5E-467B-9146-0CEE878861A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
