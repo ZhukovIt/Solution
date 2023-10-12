@@ -43,5 +43,27 @@ namespace LeetCodeSolutionsTests
             Assert.Equal(1994, result);
         }
         //----------------------------------------------------------------
+        [Fact]
+        public void FourthExample()
+        {
+            RomanToIntegerSolution sut = new RomanToIntegerSolution();
+            string strNumber = "DCXXI";
+
+            int result = sut.RomanToInt(strNumber);
+
+            Assert.Equal(621, result);
+        }
+        //----------------------------------------------------------------
+        [Fact]
+        public void FifthExample()
+        {
+            RomanToIntegerSolution sut = new RomanToIntegerSolution();
+            string strNumber = "MDCCCLXXXIV";
+
+            int result = sut.RomanToInt(strNumber);
+
+            Assert.Equal(1884, result);
+        }
+        //----------------------------------------------------------------
     }
 }
