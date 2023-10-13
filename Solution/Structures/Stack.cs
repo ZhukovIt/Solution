@@ -58,25 +58,35 @@ namespace Solution.Structures
                 throw new InvalidOperationException("Попытка получить первый элемент из пустого стека!");
             }
 
-            List<T> _NewItems = new List<T>();
+            T _LastItem = m_Items.Last();
 
-            for (int i = 0; i < m_Items.Count; i++)
+            m_Items.RemoveAt(m_Items.LastIndexOf(_LastItem));
+
+            return _LastItem;
+        }
+        //----------------------------------------------------------
+        public IEnumerable<T> Pop(int _CountLastItems)
+        {
+            if (m_Items.Count == 0)
             {
-                if (i != m_Items.Count - 1)
-                {
-                    _NewItems.Add(m_Items[i]);
-                }
-                else
-                {
-                    T _LastItem = m_Items[i];
-
-                    m_Items = _NewItems;
-
-                    return _LastItem;
-                }
+                throw new InvalidOperationException("Попытка получить первый элемент из пустого стека!");
             }
 
-            throw new NotImplementedException("Метод Pop не должен был дойти до данной точки!");
+            if (m_Items.Count < _CountLastItems)
+            {
+                throw new InvalidOperationException("Попытка получить больше элементов, чем есть в стеке!");
+            }
+
+            List<T> _Result = new List<T>();
+
+            for (int i = _CountLastItems - 1; i >= 0; i--)
+            {
+                _Result.Add(m_Items[i]);
+
+                m_Items.RemoveAt(m_Items.LastIndexOf(m_Items[i]));
+            }
+
+            return _Result;
         }
         //----------------------------------------------------------
         public T Peek()
@@ -87,6 +97,29 @@ namespace Solution.Structures
             }
 
             return m_Items.Last();
+        }
+        //----------------------------------------------------------
+        public IEnumerable<T> Peek(int _CountLastItems)
+        {
+            if (m_Items.Count == 0)
+            {
+                throw new InvalidOperationException("Попытка получить первый элемент из пустого стека!");
+            }
+
+            if (m_Items.Count < _CountLastItems)
+            {
+                throw new InvalidOperationException("Попытка получить больше элементов, чем есть в стеке!");
+            }
+
+            List<T> _Result = new List<T>();
+
+            for (int i = m_Items.Count - 1; _CountLastItems > 0; _CountLastItems--)
+            {
+                _Result.Add(m_Items[i]);
+                i--;
+            }
+
+            return _Result;
         }
         //----------------------------------------------------------
     }
