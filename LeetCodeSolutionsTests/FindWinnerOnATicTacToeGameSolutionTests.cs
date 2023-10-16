@@ -90,5 +90,25 @@ namespace LeetCodeSolutionsTests
             Assert.Equal("Pending", result);
         }
         //----------------------------------------------------------------------------------------------
+        [Fact]
+        public void FivethExample()
+        {
+            FindWinnerOnATicTacToeGameSolution sut = new FindWinnerOnATicTacToeGameSolution();
+            int[][] moves = new int[][]
+            {
+                new int[] { 1, 2 },
+                new int[] { 2, 1 },
+                new int[] { 1, 0 },
+                new int[] { 0, 0 },
+                new int[] { 0, 1 },
+                new int[] { 2, 0 },
+                new int[] { 1, 1 }
+            };
+
+            string result = sut.Tictactoe(moves);
+
+            Assert.Equal("A", result);
+        }
+        //----------------------------------------------------------------------------------------------
     }
 }
