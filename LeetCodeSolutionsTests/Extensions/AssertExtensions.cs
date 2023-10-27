@@ -9,13 +9,22 @@ namespace LeetCodeSolutionsTests.Extensions
 {
     public static class AssertExtensions
     {
-        public static void AssertCollectionsIsEqual<T>(this IEnumerable<T> _Self, IEnumerable<T> _Other)
+        public static void AssertCollectionsIsEqual<TElement>(this IEnumerable<TElement> _Self, IEnumerable<TElement> _Other)
+        {
+            Assert.True(EqualsCollections(_Self, _Other));
+        }
+        //----------------------------------------------------------------------------------------------------------------
+        private static bool EqualsCollections<TElement>(IEnumerable<TElement> _Self, IEnumerable<TElement> _Other)
         {
             bool checkResult = true;
 
             if (_Self.Count() != _Other.Count())
             {
                 checkResult = false;
+            }
+            else if (_Self.Count() == 0)
+            {
+                checkResult = true;
             }
             else
             {
@@ -24,6 +33,11 @@ namespace LeetCodeSolutionsTests.Extensions
 
                 for (int i = 0; i < _Self.Count(); i++)
                 {
+                    if (_IndexedSelf.First(x => x.index == i).el is IEnumerable<int> indexedSelfElem &&
+                        _IndexedOther.First(x => x.index == i).el is IEnumerable<int> indexedOtherElem &&
+                        EqualsCollections(indexedSelfElem, indexedOtherElem))
+                        continue;
+
                     if (!_IndexedSelf.First(x => x.index == i).el.Equals(_IndexedOther.First(x => x.index == i).el))
                     {
                         checkResult = false;
@@ -31,7 +45,9 @@ namespace LeetCodeSolutionsTests.Extensions
                     }
                 }
             }
-            Assert.True(checkResult);
+
+            return checkResult;
         }
+        //----------------------------------------------------------------------------------------------------------------
     }
 }
